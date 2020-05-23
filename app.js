@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
@@ -10,7 +10,7 @@ const app = express();
 
 //store session to the DB
 const store = new MongoDBStore({
-	uri: process.env.url,
+	uri: 'mongodb+srv://faizan:123454321@cluster0-qtcfc.mongodb.net/shop',
 	collection: 'sessions',
 });
 //multer
@@ -85,10 +85,13 @@ app.use((req, res) => {
 //mongoose connection
 (async () => {
 	try {
-		mongoose.connect(process.env.url, {
-			useNewUrlParser: true,
-			useUnifiedTopology: true,
-		});
+		mongoose.connect(
+			'mongodb+srv://faizan:123454321@cluster0-qtcfc.mongodb.net/shop',
+			{
+				useNewUrlParser: true,
+				useUnifiedTopology: true,
+			}
+		);
 		console.log('mongoose is connected');
 	} catch (err) {
 		console.log(err);
