@@ -1,13 +1,13 @@
-require('dotenv').config();
 const express = require('express');
 const { body, validationResult } = require('express-validator/check');
 var unirest = require('unirest');
 const router = express.Router();
-const rq = unirest('GET', process.env.fast2smsApi);
+const rq = unirest('GET', 'https://www.fast2sms.com/dev/bulk');
 
 router.post('/feedback', (req, res) => {
 	rq.query({
-		authorization: process.env.authorization,
+		authorization:
+			'A4YbRMawVydrEBhjHklzpgDnFs8qvCGSIPmJxe7c92No5LiWZfwZs8zBWauRQKSg2AnqIOik50jx7rNM',
 		sender_id: 'FSTSMS',
 		message:
 			'[Name: ' +
@@ -18,7 +18,7 @@ router.post('/feedback', (req, res) => {
 			req.body.message,
 		language: 'english',
 		route: 'p',
-		numbers: process.env.mobileNo,
+		numbers: '8979340786',
 	});
 
 	rq.headers({
@@ -36,7 +36,8 @@ router.post('/feedback', (req, res) => {
 
 router.post('/enquiry', (req, res) => {
 	rq.query({
-		authorization: process.env.authorization,
+		authorization:
+			'A4YbRMawVydrEBhjHklzpgDnFs8qvCGSIPmJxe7c92No5LiWZfwZs8zBWauRQKSg2AnqIOik50jx7rNM',
 		sender_id: 'FSTSMS',
 		message:
 			'[name: ' +
@@ -50,7 +51,7 @@ router.post('/enquiry', (req, res) => {
 			']',
 		language: 'english',
 		route: 'p',
-		numbers: process.env.mobileNo,
+		numbers: '8979340786',
 	});
 
 	rq.headers({
