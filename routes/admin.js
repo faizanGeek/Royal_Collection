@@ -44,7 +44,7 @@ router.post(
 		}
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {
-			console.log(errors.array());
+			// console.log(errors.array());
 			return res.status(422).render('shop/addProducts', {
 				pageTitle: 'Add Product',
 				imgError: false,
@@ -58,7 +58,7 @@ router.post(
 			.resize(370, 200)
 			.toFile('images/rImage/' + req.file.filename)
 			.then(data => {
-				console.log('done');
+				// console.log('done');
 			})
 			.catch(err => {
 				res.status(500).render('500', {
@@ -74,7 +74,7 @@ router.post(
 			imageUrl: imageUrl,
 			id: id,
 		});
-		console.log(product);
+		// console.log(product);
 		try {
 			await product.save();
 			res.redirect('/products');

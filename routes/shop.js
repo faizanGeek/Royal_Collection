@@ -6,12 +6,14 @@ let itemsPerPage = 6;
 router.get('/', (req, res) => {
 	// console.log(id);
 	res.render('shop/index', {
+		pageTitle: 'RoyalCollection Home',
 		path: 'home',
 		yes: 'no',
 	});
 });
 router.get('/about', (req, res) => {
 	res.render('shop/about', {
+		pageTitle: 'RoyalCollection About',
 		path: 'about',
 	});
 });
@@ -25,6 +27,7 @@ router.get('/products', async (req, res) => {
 			.limit(itemsPerPage);
 
 		res.render('shop/products', {
+			pageTitle: 'RoyalCollection Products',
 			path: 'products',
 			products: products,
 			currentPage: page,
@@ -45,6 +48,7 @@ router.get('/products', async (req, res) => {
 });
 router.get('/contact', (req, res) => {
 	res.render('shop/contact', {
+		pageTitle: 'RoyalCollection Contact',
 		path: 'contact',
 	});
 });

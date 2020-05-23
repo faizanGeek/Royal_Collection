@@ -11,6 +11,7 @@ router.post('/', (req, res, next) => {
 		});
 	}
 	return res.status(422).render('shop/index', {
+		pageTitle: 'Error',
 		path: 'home',
 		error: 'Wrong key',
 		oldKey: req.body.key,
