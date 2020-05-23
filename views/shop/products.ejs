@@ -1,0 +1,157 @@
+<!-- head -->
+<%- include('../includes/head') %>
+<style>
+  .row-margin-05 {
+    margin-top: 0.5em;
+  }
+
+  .row-margin-10 {
+    margin-top: 1.0em;
+  }
+
+  .row-margin-20 {
+    margin-top: 2.0em;
+  }
+
+  .row-margin-30 {
+    margin-top: 3.0em !important;
+  }
+</style>
+
+</head>
+
+<body>
+
+  <!-- preLoader -->
+  <%- include('../includes/preLoader') %>
+
+  <!-- Navbar -->
+  <%- include('../includes/navbar') %>
+
+  <!-- Page Content -->
+  <div class="page-heading products-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-content">
+            <h2>Hey Welcome!</h2>
+            <br>
+            <h4 style="color: wheat;">Choose the products below</h4>
+            <% if(isAuthenticated) { %>
+            <a href="/addProducts">
+              <button class="addProducts" style="vertical-align:middle"><span> Add items </span></button>
+            </a>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row ">
+      <%   products.forEach((element)=>{ %>
+      <% let url= "images/rImage/"+element.imageUrl;%>
+
+      <div class="col-md-4">
+        <div class="card" style="width:350px; margin-top: 2.0em;">
+          <img class="card-img-top" src="<%=url%>" alt="Card image" style="width:100%">
+          <div class="card-body">
+            <div style="display:flex">
+              <h5 class="card-title"><%= element.title.toUpperCase() %></h5>
+              <h5 class="card-text text-right" style="padding-left: 190px;">₹&nbsp;<%= element.price  %></h5>
+            </div>
+            <h6 class="card-text" style="color: red;">ProductID:&nbsp;<%= element.id %></h6>
+            <p class="card-text" style="margin-top: 15px;">
+              This <%= element.title %> is branded with reasonable price at ₹&nbsp;<%= element.price  %>.
+              Click on the button below if you want to buy , enquiry about different colours or bargaining this.
+            </p>
+            <% if(isAuthenticated) { %>
+            <span>
+              <form action="/delete" method="post">
+                <input type="hidden" name="deleteId" value="<%= element._id%>">
+                <button style="margin-top: 20px;"><i class="fa fa-trash-o" style="font-size:15px;color:red"></i>
+                </button>
+              </form>
+            </span>
+            <% }%>
+          </div>
+        </div>
+      </div>
+      <%}); %>
+
+    </div>
+  </div>
+  <nav aria-label="...">
+    <ul class="pagination" style="margin-left:35em; margin-top: 3em;;">
+      <% if (currentPage !== 1 && previousPage !== 1) { %>
+      <li class="page-item" style="width: 50px;">
+        <a href="?page=1" class="page-link" style="color: red;"><i class=" fa fa-angle-double-left"></i></a>
+      </li>
+      <% } %>
+
+      <% if (hasPreviousPage) { %>
+      <li class="page-item" style="width: 50px;"><a class="page-link" href="?page=<%= previousPage %>"
+          style="color: red;"><%= previousPage %></a></li>
+      <% } %>
+
+
+      <li class="page-item active" style="width: 50px;">
+        <a class="page-link" href="?page=<%= currentPage %>" style="background-color: red; border-color: red;">
+          <%= currentPage %>
+          <!-- <span class="sr-only">(current)</span> -->
+        </a>
+      </li>
+
+      <% if (hasNextPage) { %>
+      <li class="page-item" style="width: 50px;"><a class="page-link" href="?page=<%= nextPage %>"
+          style="color: red;"><%= nextPage %></a>
+      </li>
+      <% } %>
+
+      <% if (lastPage !== currentPage && nextPage !== lastPage) { %>
+      <li class="page-item" style="width: 50px;">
+        <a class="page-link" href="?page=<%= lastPage %>" style="color: red;"><i
+            class="fa fa-angle-double-right"></i></a>
+      </li>
+      <% } %>
+    </ul>
+  </nav>
+
+
+  <button class="open-button" onclick="openForm()">Want to Buy or any Enquiry &nbsp; <i class="fa fa-question-circle"
+      aria-hidden="true"></i></button>
+  <div class="form-popup" id="myForm">
+
+    <form action="/enquiry" class="form-container" method="post">
+
+      <div class="head1" style="font-size: large; font-weight: bold; display: block;">
+        Fill the form carefully
+      </div>
+      <br>
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Your Name" name="name" required>
+
+      <label for="number"><b>Mobile Number</b></label>
+      <input type="text" placeholder="Enter Mobile Number" name="number" required>
+
+      <label for="email"><b>ProductId</b></label>
+      <input type="text" placeholder="Enter ProductID" name="ProductID" required>
+
+      <label for="psw"><b>Buy or Enquiry? just write below</b></label>
+      <input type="text" placeholder="Ask Anything" name="Ask" required>
+      <div class="alert alert-success cnfm3" style="display:none; font-size: 12px;" role="alert">
+        Thank You!! for asking.
+      </div>
+      <button type="submit" class="btn sbmt3">Submit</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+
+  <!-- //end -->
+  <%- include('../includes/end') %>
+
+
+</body>
+
+</html>

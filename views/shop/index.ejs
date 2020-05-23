@@ -1,0 +1,216 @@
+<!-- head -->
+<%- include('../includes/head') %>
+</head>
+
+<body>
+	<!-- preLoader -->
+	<%- include('../includes/preLoader') %>
+
+	<!-- Navbar -->
+	<%- include('../includes/navbar') %>
+
+	<!-- Page Content -->
+	<!-- Banner Starts Here -->
+	<div class="banner header-text">
+		<div class="owl-banner owl-carousel">
+			<div class="banner-item-01">
+				<div class="text-content">
+					<br>
+					<br>
+					<br><br>
+
+					<h4>ROYAL COLLECTION</h4>
+					<h2 style="color: black;">BRAND AND STYLE</h2>
+					<br>
+					<h4>A Complete Men's Wear Showroom</h4>
+					<% if(isAuthenticated) { %>
+					<a href="/addProducts">
+						<button class="addProducts" style="vertical-align:middle"><span> Add items </span></button>
+					</a>
+					<% }else{%>
+					<a href="/products">
+						<button class="addProducts" style="vertical-align:middle"><span>All Products </span></button>
+					</a>
+					<%}%>
+				</div>
+			</div>
+			<!-- <div class="banner-item-02">
+				<div class="text-content">
+					<h4>Flash Deals</h4>
+					<h2>Get your best products</h2>
+				</div>
+			</div>
+			<div class="banner-item-03">
+				<div class="text-content">
+					<h4>Last Minute</h4>
+					<h2>Grab last minute deals</h2>
+				</div>
+			</div> -->
+		</div>
+	</div>
+	<!-- Banner Ends Here -->
+
+	<div class="container">
+
+		<!-- <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Thumbnail Gallery</h1> -->
+
+		<hr class="mt-2 mb-5">
+
+		<div class="row text-center text-lg-left">
+
+			<div class="col-lg-3 col-md-4 col-6">
+				<div class="container1">
+					<a href="/products" class="d-block mb-4 h-100">
+						<img class="img-fluid img-thumbnail"
+							src="https://images.pexels.com/photos/2294342/pexels-photo-2294342.jpeg?cs=srgb&dl=assorted-t-shirts-2294342.jpg&fm=jpg"
+							alt="">
+					</a>
+
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 col-6">
+				<div class="container1">
+					<a href="/products" class="d-block mb-4 h-100">
+						<img class="img-fluid img-thumbnail"
+							src="https://images.pexels.com/photos/297933/pexels-photo-297933.jpeg?cs=srgb&dl=blur-box-business-checkered-shirt-297933.jpg&fm=jpg"
+							alt="">
+					</a>
+
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-4 col-6">
+				<div class="container1">
+					<a href="/products" class="d-block mb-4 h-100">
+						<img class="img-fluid img-thumbnail"
+							src="https://images.pexels.com/photos/1082529/pexels-photo-1082529.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+							alt="">
+					</a>
+
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-4 col-6">
+				<div class="container1">
+					<a href="/products" class="d-block mb-4 h-100">
+						<img class="img-fluid img-thumbnail"
+							src="https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+							alt="">
+					</a>
+
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 col-6">
+				<div class="container1">
+					<a href="/products" class="d-block mb-4 h-100">
+						<img class="img-fluid img-thumbnail"
+							src="https://images.pexels.com/photos/934069/pexels-photo-934069.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+							alt="">
+					</a>
+
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 col-6">
+				<div class="container1">
+					<a href="/products" class="d-block mb-4 h-100">
+						<img class="img-fluid img-thumbnail"
+							src="https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+							alt="">
+					</a>
+
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 col-6">
+				<div class="container1">
+					<a href="/products" class="d-block mb-4 h-100">
+						<img class="img-fluid img-thumbnail"
+							src="https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+							alt="">
+					</a>
+
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-4 col-6">
+				<div class="container1">
+					<a href="/products" class="d-block mb-4 h-100">
+						<img class="img-fluid img-thumbnail"
+							src="https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+							alt="">
+					</a>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="best-features">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-heading">
+						<h2>Royal collection</h2>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="left-content">
+						<h4>Looking for the best products?</h4>
+						<p>
+							Royal Collection is here to give you varieties of branded clothes. It is complete men's
+							wear showroom we have been serving our customers for more than 10 years. we never compromise
+							with our quality this is why people trust on royal Collection.
+						</p>
+						<p>
+							We have direct tie ups with many brands we Purchase only quality product and serve our customers.
+							In hapur everyone knows that royal collection is hub of fasions and quality
+						</p>
+						<!-- <ul class="featured-list">
+							<li><a href="#">Lorem ipsum dolor sit amet</a></li>
+							<li><a href="#">Consectetur an adipisicing elit</a>
+							</li>
+							<li><a href="#">It aquecorporis nulla aspernatur</a>
+							</li>
+							<li><a href="#">Corporis, omnis doloremque</a></li>
+							<li><a href="#">Non cum id reprehenderit</a></li>
+						</ul> -->
+						<a href="/about" class="filled-button">Read More</a>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="right-image">
+						<img height="300px" src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="call-to-action">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="inner-content">
+						<div class="row">
+							<div class="col-md-8">
+								<h4>Creative &amp; Unique <em>Royal Collection</em>
+									Products</h4>
+								<p>
+									Don't miss the deal. Go and look up the products now
+								</p>
+							</div>
+							<div class="col-md-4">
+								<a href="/products" class="filled-button">Purchase
+									Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- //end -->
+	<%- include('../includes/end') %>
+</body>
+
+</html>

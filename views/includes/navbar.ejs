@@ -1,0 +1,60 @@
+<header class="">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <h2>Royal <em>Collection</em></h2>
+            </a>
+
+
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                <ul class="navbar-nav ml-auto">
+                    <% if(!isAuthenticated) { %>
+                    <li class="nav-item">
+                        <form class="admin" method="POST" action="/" style="margin-top: 10px;max-width:700px">
+                            <input type="text" placeholder="Admin Key" name="key">
+                            <button type="submit" name="submit"><i class="fa fa-paper-plane"
+                                    aria-hidden="true"></i></button>
+                        </form>
+                    </li>
+                    <% } %>
+                    <li class="nav-item <%= path==='home' ? 'active' : '' %>">
+                        <a class="nav-link" href="/">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item <%= path==='products' ? 'active' : '' %>">
+                        <a class="nav-link" href="/products">Our Products</a>
+                    </li>
+                    <li class="nav-item <%= path==='about' ? 'active' : '' %>">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item <%= path==='contact' ? 'active' : '' %>">
+                        <a class="nav-link" href="/contact">Contact Us</a>
+                    </li>
+                    <% if(isAuthenticated) { %>
+                    <li class="nav-item <%= path==='contact' ? 'active' : '' %>">
+                        <form action="/logout" method="POST">
+                            <!-- // <a class="nav-link" href="/logout">Logout</a> -->
+                            <!-- <button type="submit" href="/logout" class="btn btn-primary btn-sm">Logout</button> -->
+                            <button type="submit" href="/logout" class="logout logout1">Logout &nbsp; <i
+                                    class="fa fa-sign-out" aria-hidden="true"></i></button>
+                        </form>
+                    </li>
+
+
+
+                    <% } %>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
