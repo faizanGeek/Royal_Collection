@@ -79,11 +79,12 @@
         </div>
       </div>
       <%}); %>
-
     </div>
   </div>
-  <nav aria-label="...">
-    <ul class="pagination" style="margin-left:35em; margin-top: 3em;;">
+  <!-- <center> -->
+
+  <nav aria-label="..." style="margin-top: 2em;">
+    <ul class="pagination pagination-md justify-content-center">
       <% if (currentPage !== 1 && previousPage !== 1) { %>
       <li class="page-item" style="width: 50px;">
         <a href="?page=1" class="page-link" style="color: red;"><i class=" fa fa-angle-double-left"></i></a>
@@ -117,6 +118,9 @@
       <% } %>
     </ul>
   </nav>
+
+  <!-- </center> -->
+
 
 
   <button class="open-button" onclick="openForm()">Want to Buy or any Enquiry &nbsp; <i class="fa fa-question-circle"
